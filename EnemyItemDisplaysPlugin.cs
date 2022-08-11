@@ -29,6 +29,7 @@ namespace EnemyItemDisplays
         private void ItemCatalog_Init(On.RoR2.ItemCatalog.orig_Init orig)
         {
             orig();
+
             #region bosses
             new BeetleQueen().Init();
             new GroveTender().Init();
