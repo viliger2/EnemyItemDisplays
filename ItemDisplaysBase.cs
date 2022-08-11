@@ -23,6 +23,8 @@ namespace EnemyItemDisplays
             ItemDisplayRuleSet characterItemDisplayRuleSet = bodyCharacterModel.itemDisplayRuleSet;
             List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules = new List<ItemDisplayRuleSet.KeyAssetRuleGroup>();
 
+            int recordExistingDisplays = characterItemDisplayRuleSet.keyAssetRuleGroups.Length;
+
             //grab rob's old displays - not gonna waste time doing all that again
             LegacyConvertRules(characterItemDisplayRuleSet);
 
@@ -33,19 +35,16 @@ namespace EnemyItemDisplays
             SetItemDisplayRules(newItemDisplayRules);
 
             bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups = newItemDisplayRules.ToArray();
-        }
 
-        public void thefuck()
-        {
-            Log.Warning(bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups.Length);
+            BookKeep.TotalAddedDisplays += newItemDisplayRules.Count - recordExistingDisplays;
+            BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems - recordExistingDisplays;
+            BookKeep.MonstersAdded += 1;
         }
 
         private void RecoverExistingItemDisplays(ItemDisplayRuleSet characterItemDisplayRuleSet, List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
         {
-            //Log.Warning("attempt recover rules " + characterItemDisplayRuleSet.keyAssetRuleGroups.Length);
             for (int i = 0; i < characterItemDisplayRuleSet.keyAssetRuleGroups.Length; i++)
             {
-
                 ItemDisplayRuleSet.KeyAssetRuleGroup group = characterItemDisplayRuleSet.keyAssetRuleGroups[i];
                 if (group.displayRuleGroup.rules == null)
                 {
@@ -54,7 +53,6 @@ namespace EnemyItemDisplays
                 }
 
                 newItemDisplayRules.Add(group);
-                //Log.Warning($"{bodyCharacterModel.name}: recovering display rules for {group.keyAsset.name}");
             }
         }
 
@@ -80,8 +78,8 @@ namespace EnemyItemDisplays
             characterItemDisplayRuleSet.UpdgradeToAssetKeying();
         }
 
-        protected abstract void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> itemList, List<ItemDisplayRuleSet.NamedRuleGroup> equipmentList);
-
         protected abstract void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules);
+
+        protected abstract void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> itemList, List<ItemDisplayRuleSet.NamedRuleGroup> equipmentList);
     }
 }

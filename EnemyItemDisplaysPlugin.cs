@@ -23,36 +23,46 @@ namespace EnemyItemDisplays
             ItemDisplays.PopulateDisplays();
 
             On.RoR2.ItemCatalog.Init += ItemCatalog_Init;
-            ;
         }
 
         private void ItemCatalog_Init(On.RoR2.ItemCatalog.orig_Init orig)
         {
             orig();
 
-            #region bosses
-            new BeetleQueen().Init();
-            new GroveTender().Init();
-            new StoneTitan().Init();
-                //new Aurelionite().Init(); shared with stonetitan
-            #endregion
+            ItemDisplaysBase[] enemyItemDisplays = new ItemDisplaysBase[]
+            {
+                #region bosses
+                new BeetleQueen(),
+                new GroveTender(),
+                new ImpOverlord(),
+                new StoneTitan(),
+                    //new Aurelionite(), shared with stonetitan
+                #endregion
 
-            #region dlc1
-            new Beetle().Init();
-            new ClayTemplar().Init();
-            new GreaterWisp().Init();
-            new Imp().Init();
-            new ImpOverlord().Init();
-            new JellyFish().Init();
-            new Lemurian().Init();
-            new Wisp().Init();
-            #endregion
+                #region dlc1
+                new Beetle(),
+                new ClayTemplar(),
+                new ElderLemurian(),
+                new GreaterWisp(),
+                new Imp(),
+                new JellyFish(),
+                new Lemurian(),
+                new Wisp(),
+                #endregion
 
-            #region dlc2
-            new Gup().Init();
-                new Geep().Init();
-                new Gip().Init();
-            #endregion
+                #region dlc2
+                new Gup(),
+                    new Geep(),
+                    new Gip(),
+                #endregion
+            };
+
+            foreach (ItemDisplaysBase enemy in enemyItemDisplays)
+            {
+                enemy.Init();
+            }
+
+            BookKeep.Print();
         }
     }
 }

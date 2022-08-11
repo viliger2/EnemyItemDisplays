@@ -2,33 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EnemyItemDisplays.Monsters.DLC0
+namespace EnemyItemDisplays
 {
-    public class Lemurian : ItemDisplaysBase
+    internal class ElderLemurian : ItemDisplaysBase
     {
-        protected override string bodyName => "LemurianBody";
+        protected override string bodyName => "LemurianBruiserBody";
 
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
-            //lemurian is now officially badass
             itemDisplayRules.Add(ItemDisplays.CreateDisplayRuleGroupWithRules(RoR2Content.Items.CritGlasses,
                 ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayGlasses"),
                     "Head",
-                    new Vector3(0.86758F, 2.5761F, -0.14513F),
-                    new Vector3(303.3854F, 90F, 270F),
-                    new Vector3(2.48779F, -6.50632F, 2.6538F)),
-                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayGlasses"),
-                    "Head",
-                    new Vector3(-0.85677F, 2.54469F, -0.14538F),
-                    new Vector3(311.7196F, 270F, 90F),
-                    new Vector3(2.48779F, -6.50632F, 2.6538F))));
+                    new Vector3(0F, 2.48657F, 0.28219F),
+                    new Vector3(274.0505F, 182.2924F, 358.6325F),
+                    new Vector3(5.37143F, -8.9606F, 3.70641F))));
 
             itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Equipment.CommandMissile,
                 ItemDisplays.LoadDisplay("DisplayMissileRack"),
                 "Chest",
-                new Vector3(0F, 1.06875F, 1.88626F),
+                new Vector3(0F, 1.81184F, 2.14752F),
                 new Vector3(79.05093F, -0.00016F, -0.00021F),
-                new Vector3(5.27486F, 5.27486F, 5.27486F)));
+                new Vector3(5.96821F, 5.96821F, 5.96821F)));
 
             itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Missile,
                 ItemDisplays.LoadDisplay("DisplayMissileLauncher"),

@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace EnemyItemDisplays.Monsters.Bosses
 {
+    //shares same itemdisplayruleset with stone titan
     //public class Aurelionite : StoneTitan
     //{
     //    protected override string bodyName => "TitanGoldBody";
