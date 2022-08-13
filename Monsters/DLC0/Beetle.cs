@@ -10,7 +10,11 @@ namespace EnemyItemDisplays.Monsters.DLC0
 
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
-
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ExtraLife, "DisplayHippo",
+                "Head",
+                new Vector3(-0.17263F, 0.84528F, 0.81076F),
+                new Vector3(322.9382F, 179.7548F, 347.6476F),
+                new Vector3(0.9521F, 0.98007F, 0.98007F)));
         }
 
         protected override void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> list, List<ItemDisplayRuleSet.NamedRuleGroup> list2)
@@ -268,9 +272,9 @@ namespace EnemyItemDisplays.Monsters.DLC0
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHoof"),
                             childName = "CalfR",
-                            localPos = new Vector3(0f, 0.45f, -0.025f),
-                            localAngles = new Vector3(90f, 180f, 0f),
-                            localScale = new Vector3(0.1f, 0.125f, 0.1f),
+localPos = new Vector3(0.02072F, 0.4715F, 0.0433F),
+localAngles = new Vector3(78.09513F, 196.0571F, 16.40343F),
+localScale = new Vector3(0.1F, 0.125F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }

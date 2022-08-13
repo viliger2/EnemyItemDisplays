@@ -14,7 +14,7 @@ using System.Security.Permissions;
 
 namespace EnemyItemDisplays
 {
-    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.1.0")]
+    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.1.1")]
     public class EnemyItemDisplaysPlugin : BaseUnityPlugin
     {
         void Awake()

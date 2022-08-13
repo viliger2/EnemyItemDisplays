@@ -11,6 +11,11 @@ namespace EnemyItemDisplays.Monsters.DLC0
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
 
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ExtraLife, "DisplayHippo",
+                "Head",
+                new Vector3(-0.06575F, 0.14281F, -0.65062F),
+                new Vector3(290.6739F, 73.76665F, 100.0637F),
+                new Vector3(1.03209F, 1.06241F, 1.06241F)));
         }
 
         protected override void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> list, List<ItemDisplayRuleSet.NamedRuleGroup> list2)

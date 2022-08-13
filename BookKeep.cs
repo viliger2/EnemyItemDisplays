@@ -25,7 +25,7 @@ namespace EnemyItemDisplays
                         ReadOnlyContentPack contentPack = ContentManager.allLoadedContentPacks[i];
                         if (contentPack.identifier == "RoR2.BaseContent" || contentPack.identifier == "RoR2.DLC1")
                         {
-                            totalVanillaItems += contentPack.itemDefs.Length + contentPack.equipmentDefs.Length;
+                            totalVanillaItems += contentPack.itemDefs.Length;// + contentPack.equipmentDefs.Length;
                         }
                     }
                 }
@@ -34,10 +34,36 @@ namespace EnemyItemDisplays
             }
         }
 
+        private static int? totalEnemies = null;
+        public static int TotalEnemies
+        {
+            get
+            {
+                if (totalEnemies == null)
+                {
+                    totalEnemies = 0;
+
+                    for (int i = 0; i < ContentManager.allLoadedContentPacks.Length; i++)
+                    {
+                        ReadOnlyContentPack contentPack = ContentManager.allLoadedContentPacks[i];
+                        if (contentPack.identifier == "RoR2.BaseContent" || contentPack.identifier == "RoR2.DLC1")
+                        {
+                            totalEnemies += contentPack.bodyPrefabs.Length - contentPack.survivorDefs.Length;// + contentPack.equipmentDefs.Length;
+                            foreach (var body in contentPack.bodyPrefabs)
+                            {
+                                Log.Message(body.name);
+                            }
+                        }
+                    }
+                }
+
+                return totalVanillaItems.Value;
+            }
+        }
+        
         public static void Print()
         {
-            Log.Message(TotalVanillaItems);
-            Log.Message($"Added item displays to {MonstersAdded} enemies. Total enemy item displays: {TotalAddedDisplays}/{TotalPotentialDisplays} (including preexisting)");
+            Log.Message($"Added item displays to {MonstersAdded} enemies. Total enemy item displays: {TotalAddedDisplays}/{TotalPotentialDisplays}");
         }
     }
 }

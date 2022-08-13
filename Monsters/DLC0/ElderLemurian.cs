@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace EnemyItemDisplays
+namespace EnemyItemDisplays.Monsters.DLC0
 {
     internal class ElderLemurian : ItemDisplaysBase
     {

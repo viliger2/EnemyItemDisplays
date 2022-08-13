@@ -6,9 +6,9 @@ namespace EnemyItemDisplays
 {
     internal static class ItemDisplays
     {
-        private static Dictionary<string, GameObject> itemDisplayPrefabs = new Dictionary<string, GameObject>();
+        private static Dictionary<string, GameObject> ItemDisplayPrefabs = new Dictionary<string, GameObject>();
 
-        private static bool recording = false;
+        private static bool Recording = false;
         public static Dictionary<string, int> itemDisplayCheckCount = new Dictionary<string, int>();
         public static Dictionary<string, Object> itemDisplayCheckAsset = new Dictionary<string, Object>();
 
@@ -18,8 +18,6 @@ namespace EnemyItemDisplays
             //PopulateFromBody("CrocoBody");
             PopulateDisplaysFromBody("MageBody");
             PopulateDisplaysFromBody("LunarExploderBody");
-
-            AddCustomLightningArm();
         }
 
         private static void PopulateDisplaysFromBody(string bodyName)
@@ -27,7 +25,7 @@ namespace EnemyItemDisplays
             ItemDisplayRuleSet itemDisplayRuleSet = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/CharacterBodies/" + bodyName)?.GetComponent<ModelLocator>()?.modelTransform.GetComponent<CharacterModel>()?.itemDisplayRuleSet;
             if (itemDisplayRuleSet == null)
             {
-                Debug.LogError("couldn't load ItemDisplayRuleSet from " + bodyName + ". Check if name was entered correctly");
+                Log.Error("couldn't load ItemDisplayRuleSet from " + bodyName + ". Check if name was entered correctly");
                 return;
             }
 
@@ -44,9 +42,9 @@ namespace EnemyItemDisplays
                     {
                         string name = followerPrefab.name;
                         string key = name?.ToLowerInvariant();
-                        if (!itemDisplayPrefabs.ContainsKey(key))
+                        if (!ItemDisplayPrefabs.ContainsKey(key))
                         {
-                            itemDisplayPrefabs[key] = followerPrefab;
+                            ItemDisplayPrefabs[key] = followerPrefab;
 
                             itemDisplayCheckCount[key] = 0;
                             itemDisplayCheckAsset[key] = itemRuleGroups[i].keyAsset;
@@ -56,36 +54,13 @@ namespace EnemyItemDisplays
             }
         }
 
-        private static void AddCustomLightningArm()
-        {
-            #region IgnoreThisAndRunAway
-            //seriously you don't need this
-            //I see you're still here, well if you do need this here's what you do
-            //but again you don't need this
-            //capacitor is hardcoded to track your "UpperArmR", "LowerArmR", and "HandR" bones.
-            //this is for having the lightning on custom bones in your childlocator
-
-            //TODO r2api soft dependency
-            //GameObject display = R2API.PrefabAPI.InstantiateClone(itemDisplayPrefabs["DisplayLightningArmRight".ToLowerInvariant()], "DisplayLightningArmCustom", false);
-
-            //LimbMatcher limbMatcher = display.GetComponent<LimbMatcher>();
-
-            //limbMatcher.limbPairs[0].targetChildLimb = "LightningArm1";
-            //limbMatcher.limbPairs[1].targetChildLimb = "LightningArm2";
-            //limbMatcher.limbPairs[2].targetChildLimb = "LightningArmEnd";
-
-            //string key = "DisplayLightningArmCustom".ToLowerInvariant();
-            //itemDisplayPrefabs[key] = display;
-            #endregion
-        }
-
         public static GameObject LoadDisplay(string name)
         {
-            if (itemDisplayPrefabs.ContainsKey(name.ToLowerInvariant()))
+            if (ItemDisplayPrefabs.ContainsKey(name.ToLowerInvariant()))
             {
-                if (itemDisplayPrefabs[name.ToLowerInvariant()])
+                if (ItemDisplayPrefabs[name.ToLowerInvariant()])
                 {
-                    if (recording)
+                    if (Recording)
                     {
                         if (itemDisplayCheckCount.ContainsKey(name.ToLowerInvariant()))
                         {
@@ -93,19 +68,19 @@ namespace EnemyItemDisplays
                         }
                     }
 
-                    GameObject display = itemDisplayPrefabs[name.ToLowerInvariant()];
+                    GameObject display = ItemDisplayPrefabs[name.ToLowerInvariant()];
 
                     return display;
                 }
             }
-            Debug.LogError("item display " + name + " returned null");
+            Log.Error("item display " + name + " returned null");
             return null;
         }
 
         #region check unused item displays
         public static void recordUnused()
         {
-            recording = true;
+            Recording = true;
         }
         public static void printUnused()
         {
@@ -115,9 +90,9 @@ namespace EnemyItemDisplays
             foreach (KeyValuePair<string, int> pair in itemDisplayCheckCount)
             {
 
-                string thing = $"\n{itemDisplayCheckAsset[pair.Key]} | {itemDisplayPrefabs[pair.Key].name}";
+                string thing = $"\n{itemDisplayCheckAsset[pair.Key]} | {ItemDisplayPrefabs[pair.Key].name}";
 
-                thing = SpitOutNewRule(itemDisplayCheckAsset[pair.Key], itemDisplayPrefabs[pair.Key].name);
+                thing = SpitOutNewRule(itemDisplayCheckAsset[pair.Key], ItemDisplayPrefabs[pair.Key].name);
 
                 if (pair.Value > 0)
                 {
@@ -138,10 +113,10 @@ namespace EnemyItemDisplays
             string contentType = asset is ItemDef ? "Items" : "Equipment";
 
             return $"\n            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule({content}.{contentType}.{asset.name}, \"{prefabName}\",\n" +
-                   $"                                                                       \"Chest\",\n" +
-                   $"                                                                       new Vector3(2, 2, 2),\n" +
-                   $"                                                                       new Vector3(0, 0, 0),\n" +
-                   $"                                                                       new Vector3(1, 1, 1)));";
+                      "                \"Head\",\n" +
+                      "                new Vector3(2, 2, 2),\n" +
+                      "                new Vector3(0, 0, 0),\n" +
+                      "                new Vector3(1, 1, 1)));";
         }
 
         private static void resetUnused()
@@ -150,7 +125,7 @@ namespace EnemyItemDisplays
             {
                 itemDisplayCheckCount[pair.Key] = 0;
             }
-            recording = false;
+            Recording = false;
         }
         #endregion
 
@@ -167,7 +142,7 @@ namespace EnemyItemDisplays
 
             if (itemDef == null)
             {
-                Debug.LogError("Could not load keyasset for " + itemName);
+                Log.Error("Could not load keyasset for " + itemName);
             }
 
             return itemDef;

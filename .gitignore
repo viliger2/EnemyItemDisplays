@@ -16,7 +16,7 @@
 [Bb]uild/
 [Bb]uilds/
 [Dd]ebugPublic/
-# [Rr]elease/
+[Rr]elease/
 *.zip
 x64/
 x86/

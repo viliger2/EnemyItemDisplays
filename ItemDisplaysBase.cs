@@ -23,8 +23,6 @@ namespace EnemyItemDisplays
             ItemDisplayRuleSet characterItemDisplayRuleSet = bodyCharacterModel.itemDisplayRuleSet;
             List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules = new List<ItemDisplayRuleSet.KeyAssetRuleGroup>();
 
-            int recordExistingDisplays = characterItemDisplayRuleSet.keyAssetRuleGroups.Length;
-
             //grab rob's old displays - not gonna waste time doing all that again
             LegacyConvertRules(characterItemDisplayRuleSet);
 
@@ -36,8 +34,20 @@ namespace EnemyItemDisplays
 
             bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups = newItemDisplayRules.ToArray();
 
-            BookKeep.TotalAddedDisplays += newItemDisplayRules.Count - recordExistingDisplays;
-            BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems - recordExistingDisplays;
+            Record(newItemDisplayRules);
+        }
+
+        private static void Record(List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
+        {
+            int newItemCount = 0;
+            foreach (ItemDisplayRuleSet.KeyAssetRuleGroup item in newItemDisplayRules)
+            {
+                if (item.keyAsset is ItemDef)
+                    newItemCount++;
+            }
+            
+            BookKeep.TotalAddedDisplays += newItemCount;
+            BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems;
             BookKeep.MonstersAdded += 1;
         }
 
@@ -56,7 +66,7 @@ namespace EnemyItemDisplays
             }
         }
 
-        private void LegacyConvertRules(ItemDisplayRuleSet characterItemDisplayRuleSet)
+        private int LegacyConvertRules(ItemDisplayRuleSet characterItemDisplayRuleSet)
         {
             List<ItemDisplayRuleSet.NamedRuleGroup> itemRules = new List<ItemDisplayRuleSet.NamedRuleGroup>();
             List<ItemDisplayRuleSet.NamedRuleGroup> equipmentRules = new List<ItemDisplayRuleSet.NamedRuleGroup>();
@@ -73,9 +83,10 @@ namespace EnemyItemDisplays
             }
 
             if (itemRules.Count == 0 && equipmentRules.Count == 0)
-                return;
+                return 0;
 
             characterItemDisplayRuleSet.UpdgradeToAssetKeying();
+            return equipmentRules.Count;
         }
 
         protected abstract void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules);
