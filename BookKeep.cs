@@ -17,20 +17,7 @@ namespace EnemyItemDisplays
         public static int TotalVanillaItems {
             get
             {
-                if (totalVanillaItems == null)
-                {
-                    totalVanillaItems = 0;
-                    for (int i = 0; i < ContentManager.allLoadedContentPacks.Length; i++)
-                    {
-                        ReadOnlyContentPack contentPack = ContentManager.allLoadedContentPacks[i];
-                        if (contentPack.identifier == "RoR2.BaseContent" || contentPack.identifier == "RoR2.DLC1")
-                        {
-                            totalVanillaItems += contentPack.itemDefs.Length;// + contentPack.equipmentDefs.Length;
-                        }
-                    }
-                }
-
-                return totalVanillaItems.Value;
+                return ItemDisplays.KeyAssetDisplayPrefabs.Keys.Count;
             }
         }
 
@@ -63,7 +50,7 @@ namespace EnemyItemDisplays
         
         public static void Print()
         {
-            Log.Message($"Added item displays to {MonstersAdded} enemies. Total enemy item displays: {TotalAddedDisplays}/{TotalPotentialDisplays}");
+            Log.Message($"Added iteme displays to {MonstersAdded} enemies. Total enemy item displays: {TotalAddedDisplays}/{TotalPotentialDisplays}");
         }
     }
 }

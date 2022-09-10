@@ -829,7 +829,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
-                            followerPrefab = ItemDisplays.LoadDisplay("DisplaySawmerang"),
+                            followerPrefab = ItemDisplays.LoadDisplay("DisplaySawmerangFollower"),
                             childName = "Root",
                             localPos = new Vector3(0f, 10.5f, -12f),
                             localAngles = new Vector3(-90f, 0f, 0f),

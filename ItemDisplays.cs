@@ -6,18 +6,13 @@ namespace EnemyItemDisplays
 {
     internal static class ItemDisplays
     {
-        private static Dictionary<string, GameObject> ItemDisplayPrefabs = new Dictionary<string, GameObject>();
-
-        private static bool Recording = false;
-        public static Dictionary<string, int> itemDisplayCheckCount = new Dictionary<string, int>();
-        public static Dictionary<string, Object> itemDisplayCheckAsset = new Dictionary<string, Object>();
+        public static Dictionary<string, GameObject> itemDisplayPrefabs = new Dictionary<string, GameObject>();
+        public static Dictionary<Object, List<string>> KeyAssetDisplayPrefabs = new Dictionary<Object, List<string>>();
 
         public static void PopulateDisplays()
         {
             //PopulateFromBody("CommandoBody");
-            //PopulateFromBody("CrocoBody");
-            PopulateDisplaysFromBody("MageBody");
-            PopulateDisplaysFromBody("LunarExploderBody");
+            PopulateDisplaysFromBody("MercBody");
         }
 
         private static void PopulateDisplaysFromBody(string bodyName)
@@ -35,19 +30,26 @@ namespace EnemyItemDisplays
             {
                 ItemDisplayRule[] rules = itemRuleGroups[i].displayRuleGroup.rules;
 
+                bool alreadySeenThisKey = KeyAssetDisplayPrefabs.ContainsKey(itemRuleGroups[i].keyAsset);
+
                 for (int j = 0; j < rules.Length; j++)
                 {
                     GameObject followerPrefab = rules[j].followerPrefab;
                     if (followerPrefab)
                     {
-                        string name = followerPrefab.name;
-                        string key = name?.ToLowerInvariant();
-                        if (!ItemDisplayPrefabs.ContainsKey(key))
+                        string key = followerPrefab.name?.ToLowerInvariant();
+                        if (!itemDisplayPrefabs.ContainsKey(key))
                         {
-                            ItemDisplayPrefabs[key] = followerPrefab;
+                            itemDisplayPrefabs[key] = followerPrefab;
+                        }
 
-                            itemDisplayCheckCount[key] = 0;
-                            itemDisplayCheckAsset[key] = itemRuleGroups[i].keyAsset;
+                        if (!alreadySeenThisKey)
+                        {
+                            if (!KeyAssetDisplayPrefabs.ContainsKey(itemRuleGroups[i].keyAsset))
+                            {
+                                KeyAssetDisplayPrefabs[itemRuleGroups[i].keyAsset] = new List<string>();
+                            }
+                            KeyAssetDisplayPrefabs[itemRuleGroups[i].keyAsset].Add(followerPrefab.name);
                         }
                     }
                 }
@@ -56,19 +58,12 @@ namespace EnemyItemDisplays
 
         public static GameObject LoadDisplay(string name)
         {
-            if (ItemDisplayPrefabs.ContainsKey(name.ToLowerInvariant()))
+            if (itemDisplayPrefabs.ContainsKey(name.ToLowerInvariant()))
             {
-                if (ItemDisplayPrefabs[name.ToLowerInvariant()])
+                if (itemDisplayPrefabs[name.ToLowerInvariant()])
                 {
-                    if (Recording)
-                    {
-                        if (itemDisplayCheckCount.ContainsKey(name.ToLowerInvariant()))
-                        {
-                            itemDisplayCheckCount[name.ToLowerInvariant()]++;
-                        }
-                    }
 
-                    GameObject display = ItemDisplayPrefabs[name.ToLowerInvariant()];
+                    GameObject display = itemDisplayPrefabs[name.ToLowerInvariant()];
 
                     return display;
                 }
@@ -76,58 +71,6 @@ namespace EnemyItemDisplays
             Log.Error("item display " + name + " returned null");
             return null;
         }
-
-        #region check unused item displays
-        public static void recordUnused()
-        {
-            Recording = true;
-        }
-        public static void printUnused()
-        {
-            string yes = "used:";
-            string no = "not used:";
-
-            foreach (KeyValuePair<string, int> pair in itemDisplayCheckCount)
-            {
-
-                string thing = $"\n{itemDisplayCheckAsset[pair.Key]} | {ItemDisplayPrefabs[pair.Key].name}";
-
-                thing = SpitOutNewRule(itemDisplayCheckAsset[pair.Key], ItemDisplayPrefabs[pair.Key].name);
-
-                if (pair.Value > 0)
-                {
-                    yes += thing;
-                }
-                else
-                {
-                    no += thing;
-                }
-            }
-            Log.Warning(no);
-
-            //resetUnused();
-        }
-
-        private static string SpitOutNewRule(Object asset, string prefabName, string content = "DLC1Content")
-        {
-            string contentType = asset is ItemDef ? "Items" : "Equipment";
-
-            return $"\n            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule({content}.{contentType}.{asset.name}, \"{prefabName}\",\n" +
-                      "                \"Head\",\n" +
-                      "                new Vector3(2, 2, 2),\n" +
-                      "                new Vector3(0, 0, 0),\n" +
-                      "                new Vector3(1, 1, 1)));";
-        }
-
-        private static void resetUnused()
-        {
-            foreach (KeyValuePair<string, int> pair in itemDisplayCheckCount)
-            {
-                itemDisplayCheckCount[pair.Key] = 0;
-            }
-            Recording = false;
-        }
-        #endregion
 
         #region add rule helpers
 

@@ -10,7 +10,286 @@ namespace EnemyItemDisplays.Monsters.DLC0
 
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
-
+            #region not done
+            /*
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.PersonalShield, "DisplayShieldGenerator",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.FlatHealth, "DisplaySteakCurved",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.TreasureCache, "DisplayKey",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.IgniteOnKill, "DisplayGasoline",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.StunChanceOnHit, "DisplayStunGrenade",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.OutOfCombatArmor, "DisplayOddlyShapedOpal",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.GoldOnHurt, "DisplayRollOfPennies",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.BossDamageBonus, "DisplayAPRound",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.BarrierOnKill, "DisplayBrooch",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.FragileDamageBonus, "DisplayDelicateWatch",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.AttackSpeedAndMoveSpeed, "DisplayCoffee",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.WardOnLevel, "DisplayWarbanner",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.BleedOnHit, "DisplayTriTip",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.SprintBonus, "DisplaySoda",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.HealingPotion, "DisplayHealingPotion",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateDisplayRuleGroupWithRules(RoR2Content.Items.Tooth,
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothNecklaceDecal"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1)),
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothMeshLarge"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1)),
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothMeshSmall1"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1)),
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothMeshSmall2"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1)),
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothMeshSmall2"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1)),
+                ItemDisplays.CreateDisplayRule(ItemDisplays.LoadDisplay("DisplayToothMeshSmall1"),
+                    "Head",
+                    new Vector3(2, 2, 2),
+                    new Vector3(0, 0, 0),
+                    new Vector3(1, 1, 1))));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.StickyBomb, "DisplayStickyBomb",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Crowbar, "DisplayCrowbar",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Firework, "DisplayFirework",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.StrengthenBurn, "DisplayGasTank",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.RegeneratingScrap, "DisplayRegeneratingScrap",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ExplodeOnDeath, "DisplayWilloWisp",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.EnergizedOnEquipmentUse, "DisplayWarHorn",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.FreeChest, "DisplayShippingRequestForm",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Missile, "DisplayMissileLauncher",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Thorns, "DisplayRazorwireLeft",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.EquipmentMagazine, "DisplayBattery",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Infusion, "DisplayInfusion",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.PrimarySkillShuriken, "DisplayShuriken",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.HealOnCrit, "DisplayScythe",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.SlowOnHit, "DisplayBauble",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.SprintArmor, "DisplayBuckler",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Feather, "DisplayFeather",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.TPHealingNova, "DisplayGlowFlower",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ExecuteLowHealthElite, "DisplayGuillotine",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Phasing, "DisplayStealthkit",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.BonusGoldPackOnKill, "DisplayTome",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Seed, "DisplaySeed",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.MoveSpeedOnKill, "DisplayGrappleHook",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Squid, "DisplaySquidTurret",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ExtraLife, "DisplayHippo",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.PermanentDebuffOnHit, "DisplayScorpion",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.CritDamage, "DisplayLaserSight",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.MoreMissile, "DisplayICBM",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.RandomEquipmentTrigger, "DisplayBottledChaos",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.AlienHead, "DisplayAlienHead",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ShockNearby, "DisplayTeslaCoil",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(DLC1Content.Items.ImmuneToDebuff, "DisplayRainCoatBelt",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.LaserTurbine, "DisplayLaserTurbine",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Plant, "DisplayInterstellarDeskPlant",
+                "Head",
+                new Vector3(2, 2, 2),
+                new Vector3(0, 0, 0),
+                new Vector3(1, 1, 1)));
+            */
+            #endregion not done
         }
 
         protected override void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> list, List<ItemDisplayRuleSet.NamedRuleGroup> list2)

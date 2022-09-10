@@ -14,7 +14,7 @@ using System.Security.Permissions;
 
 namespace EnemyItemDisplays
 {
-    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.1.1")]
+    [BepInPlugin("com.TheTimeSweeper.SillyEnemyItemDisplays", "SillyEnemyItemDisplays", "0.1.2")]
     public class EnemyItemDisplaysPlugin : BaseUnityPlugin
     {
         void Awake()
@@ -39,7 +39,7 @@ namespace EnemyItemDisplays
                     //new Aurelionite(), shared with stonetitan
                 #endregion
 
-                #region dlc1
+                #region dlc0
                 new Beetle(),
                 new ClayTemplar(),
                 new ElderLemurian(),
@@ -50,7 +50,7 @@ namespace EnemyItemDisplays
                 new Wisp(),
                 #endregion
 
-                #region dlc2
+                #region dlc1
                 new Gup(),
                     new Geep(),
                     new Gip(),

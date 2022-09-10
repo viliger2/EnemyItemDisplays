@@ -20,6 +20,8 @@ namespace EnemyItemDisplays
 
         private void SetItemDisplays()
         {
+            //ItemDisplays.recordUnused();
+
             ItemDisplayRuleSet characterItemDisplayRuleSet = bodyCharacterModel.itemDisplayRuleSet;
             List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules = new List<ItemDisplayRuleSet.KeyAssetRuleGroup>();
 
@@ -35,6 +37,9 @@ namespace EnemyItemDisplays
             bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups = newItemDisplayRules.ToArray();
 
             Record(newItemDisplayRules);
+
+            //Log.Info(bodyName + "unused displays: ");
+            //ItemDisplayCheck.printUnused(newItemDisplayRules);
         }
 
         private static void Record(List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
