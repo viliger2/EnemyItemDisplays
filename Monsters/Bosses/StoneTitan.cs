@@ -23,7 +23,5 @@ namespace EnemyItemDisplays.Monsters.Bosses
                 new Vector3(0F, 0F, 0F),
                 new Vector3(3.02237F, 2.98254F, 2.88232F)));
         }
-
-        protected override void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> itemList, List<ItemDisplayRuleSet.NamedRuleGroup> equipmentList) { }
     }
 }

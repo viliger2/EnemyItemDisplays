@@ -25,21 +25,22 @@ namespace EnemyItemDisplays
                 switch (contentPack.identifier)
                 {
                     case "RoR2.BaseContent":
+                        //only need items for monsters
                         vanillaItems = contentPack.itemDefs.ToArray();
                         break;
                     case "RoR2.DLC1":
                         dlc1Items = contentPack.itemDefs.ToArray();
                         break;
-                    //case "RoR2.Junk":
-                    //    junkItems = contentPack.itemDefs.ToArray();
-                    //    break;
+                        //case "RoR2.Junk":
+                        //    junkItems = contentPack.itemDefs.ToArray();
+                        //    break;
                 }
             }
 
 
             allDisplayedItems.Sort((item1, item2) => {
                 //sort itemdefs by tier
-                if(item1 is ItemDef && item2 is ItemDef)
+                if (item1 is ItemDef && item2 is ItemDef)
                 {
                     return (item1 as ItemDef).tier.CompareTo((item2 as ItemDef).tier);
                 }
@@ -69,7 +70,7 @@ namespace EnemyItemDisplays
                     continue;
                 }
 
-                if (item.tier != ItemTier.Tier1 && 
+                if (item.tier != ItemTier.Tier1 &&
                     item.tier != ItemTier.Tier2 &&
                     item.tier != ItemTier.Tier3)
                 {
@@ -79,13 +80,20 @@ namespace EnemyItemDisplays
 
         }
 
-        public static void PrintUnused(List<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet)
+        public static void PrintUnused(ItemDisplayRuleSet itemDisplayRuleSet)
+        {
+
+        }
+
+        public static void PrintUnused(IEnumerable<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet)
         {
             string missingDisplays = "not used:";
 
+            //grab all keyassets
             if(allDisplayedItems == null)
             GatherAllItems();
 
+            //remove from list keyassets that we already have displays for
             List<Object> missingKeyAssets = new List<Object>(allDisplayedItems);
             string firstCompatibleChild = "";
             foreach (ItemDisplayRuleSet.KeyAssetRuleGroup ruleGroup in ruleSet)
@@ -100,8 +108,10 @@ namespace EnemyItemDisplays
                 }
             }
 
+            //print all display rules
             foreach (Object keyAsset in missingKeyAssets)
-            {                
+            {              
+                //grab the contentpack from which the keyasset is from
                 string content = "MISSING";
                 if (vanillaItems.Contains(keyAsset))
                 {
@@ -119,6 +129,8 @@ namespace EnemyItemDisplays
                 string thing = $"";
                 if (ItemDisplays.KeyAssetDisplayPrefabs.ContainsKey(keyAsset))
                 {
+                    //if we have a displayprefab for it (Populated in ItemDisplays.PopulateDisplays),
+                        //generate a rule formatted to the code in this project
                     thing += SpitOutNewRule(keyAsset, content, firstCompatibleChild, ItemDisplays.KeyAssetDisplayPrefabs[keyAsset]);
                 }
                 else
@@ -127,6 +139,7 @@ namespace EnemyItemDisplays
                 }
                 missingDisplays += thing;
             }
+            //add them all to a giant string and print it out, formatted
             Log.Message(missingDisplays);
         }
 
@@ -137,6 +150,7 @@ namespace EnemyItemDisplays
             if (prefabNames.Count == 0)
                 return $"\n[NO PREFABS FOUND FOR THE KEYASSET {asset}";
 
+            //generate a simple rule
             if (prefabNames.Count == 1)
             {
                 return $"\n            itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule({content}.{contentType}.{asset.name}, \"{prefabNames[0]}\",\n" +
@@ -146,8 +160,9 @@ namespace EnemyItemDisplays
                           "                new Vector3(1, 1, 1)));";
             }
 
+            //if there are multiple display prefabs int for the same item (gravboots, afterburners),
+                //create a multiple-prefab display rule like this
             string newRule = $"\n            itemDisplayRules.Add(ItemDisplays.CreateDisplayRuleGroupWithRules({content}.{contentType}.{asset.name}";
-
             for (int i = 0; i < prefabNames.Count; i++)
             {
                 newRule += ",\n" + 

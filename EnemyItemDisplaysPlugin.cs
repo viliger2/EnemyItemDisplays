@@ -41,6 +41,7 @@ namespace EnemyItemDisplays
 
                 #region dlc0
                 new Beetle(),
+                new BeetleGuard(),
                 new ClayTemplar(),
                 new ElderLemurian(),
                 new GreaterWisp(),
