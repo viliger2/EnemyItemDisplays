@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +9,23 @@ namespace EnemyItemDisplays
     public abstract class ItemDisplaysBase
     {
         protected abstract string bodyName { get; }
+
+        protected virtual bool generateDisplays => false;
+        protected virtual Dictionary<string, string> NewChildLocatorEntries => null;
+
+        protected abstract void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules);
+        protected virtual void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> itemList, List<ItemDisplayRuleSet.NamedRuleGroup> equipmentList) { }
+
         protected CharacterModel bodyCharacterModel { get; private set; }
 
         public virtual ItemDisplaysBase Init()
         {
             bodyCharacterModel = BodyCatalog.FindBodyPrefab(bodyName).GetComponentInChildren<CharacterModel>();
             SetItemDisplays();
+            if(NewChildLocatorEntries != null)
+            {
+                AddNewChildLocatorEntries();
+            }
 
             return this;
         }
@@ -32,38 +44,14 @@ namespace EnemyItemDisplays
             //set new display rules here
             SetItemDisplayRules(newItemDisplayRules);
 
+            if (generateDisplays)
+            {
+                ItemDisplayCheck.PrintUnused(newItemDisplayRules, bodyName);
+            }
+
             bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups = newItemDisplayRules.ToArray();
 
             Record(newItemDisplayRules);
-        }
-
-        private static void Record(List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
-        {
-            int newItemCount = 0;
-            foreach (ItemDisplayRuleSet.KeyAssetRuleGroup item in newItemDisplayRules)
-            {
-                if (item.keyAsset is ItemDef)
-                    newItemCount++;
-            }
-            
-            BookKeep.TotalAddedDisplays += newItemCount;
-            BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems;
-            BookKeep.MonstersAdded += 1;
-        }
-
-        private void RecoverExistingItemDisplays(ItemDisplayRuleSet characterItemDisplayRuleSet, List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
-        {
-            for (int i = 0; i < characterItemDisplayRuleSet.keyAssetRuleGroups.Length; i++)
-            {
-                ItemDisplayRuleSet.KeyAssetRuleGroup group = characterItemDisplayRuleSet.keyAssetRuleGroups[i];
-                if (group.displayRuleGroup.rules == null)
-                {
-                    Log.Warning($"{bodyCharacterModel.name}: keyasset {group.keyAsset.name} null");
-                    continue;
-                }
-
-                newItemDisplayRules.Add(group);
-            }
         }
 
         private int LegacyConvertRules(ItemDisplayRuleSet characterItemDisplayRuleSet)
@@ -89,8 +77,55 @@ namespace EnemyItemDisplays
             return equipmentRules.Count;
         }
 
-        protected abstract void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules);
+        private void RecoverExistingItemDisplays(ItemDisplayRuleSet characterItemDisplayRuleSet, List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
+        {
+            for (int i = 0; i < characterItemDisplayRuleSet.keyAssetRuleGroups.Length; i++)
+            {
+                ItemDisplayRuleSet.KeyAssetRuleGroup group = characterItemDisplayRuleSet.keyAssetRuleGroups[i];
+                if (group.displayRuleGroup.rules == null)
+                {
+                    Log.Warning($"{bodyCharacterModel.name}: keyasset {group.keyAsset.name} null");
+                    continue;
+                }
 
-        protected virtual void SetLegacyItemDisplays(List<ItemDisplayRuleSet.NamedRuleGroup> itemList, List<ItemDisplayRuleSet.NamedRuleGroup> equipmentList) { }
+                newItemDisplayRules.Add(group);
+            }
+        }
+
+        private static void Record(List<ItemDisplayRuleSet.KeyAssetRuleGroup> newItemDisplayRules)
+        {
+            int newItemCount = 0;
+            foreach (ItemDisplayRuleSet.KeyAssetRuleGroup item in newItemDisplayRules)
+            {
+                if (item.keyAsset is ItemDef)
+                    newItemCount++;
+            }
+
+            BookKeep.TotalAddedDisplays += newItemCount;
+            BookKeep.TotalPotentialDisplays += BookKeep.TotalVanillaItems;
+            BookKeep.MonstersAdded += 1;
+        }
+
+        private void AddNewChildLocatorEntries()
+        {
+            ChildLocator childLocator = bodyCharacterModel.GetComponent<ChildLocator>();
+
+            List<ChildLocator.NameTransformPair> newPairs = new List<ChildLocator.NameTransformPair>();
+
+            foreach (KeyValuePair<string, string> newEntry in NewChildLocatorEntries)
+            {
+                Transform newTransform = bodyCharacterModel.transform.Find(newEntry.Value);
+                if(newTransform == null)
+                {
+                    Log.Warning($"Error adding ChildLocator entry: Couldn't find transform for {newEntry.Value}");
+                }
+                newPairs.Add(new ChildLocator.NameTransformPair
+                {
+                    name = newEntry.Key,
+                    transform = newTransform
+                });
+            }
+            childLocator.transformPairs = childLocator.transformPairs.Concat(newPairs).ToArray();
+        }
     }
 }

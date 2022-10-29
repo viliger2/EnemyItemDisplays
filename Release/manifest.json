@@ -1,0 +1,10 @@
+{
+    "name": "EnemyItemDisplays",
+    "version_number": "0.1.1",
+    "website_url": "https://github.com/TheTimeSweeper/EnemyItemDisplays",
+    "description": "Adds item displays to monsters! | Originally by rob. Carrying on the torch, hopefully",
+    "dependencies": [
+        "bbepis-BepInExPack-5.3.1",
+        "RiskofThunder-HookGenPatcher-1.2.3"
+    ]
+}

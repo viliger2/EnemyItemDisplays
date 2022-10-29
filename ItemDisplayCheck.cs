@@ -80,14 +80,14 @@ namespace EnemyItemDisplays
 
         }
 
-        public static void PrintUnused(ItemDisplayRuleSet itemDisplayRuleSet)
+        public static void PrintUnused(ItemDisplayRuleSet itemDisplayRuleSet, string bodyName)
         {
-
+            PrintUnused(itemDisplayRuleSet.keyAssetRuleGroups.ToList(), bodyName);
         }
 
-        public static void PrintUnused(IEnumerable<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet)
+        public static void PrintUnused(IEnumerable<ItemDisplayRuleSet.KeyAssetRuleGroup> ruleSet, string bodyName)
         {
-            string missingDisplays = "not used:";
+            string missingDisplays = $"generating item displays for {bodyName}";
 
             //grab all keyassets
             if(allDisplayedItems == null)

@@ -37,6 +37,8 @@ namespace EnemyItemDisplays
                 new ImpOverlord(),
                 new StoneTitan(),
                     //new Aurelionite(), shared with stonetitan
+                new WanderingVagrant(),
+                new ClayDuneStrider(),
                 #endregion
 
                 #region dlc0

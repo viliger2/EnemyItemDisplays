@@ -14,7 +14,11 @@ namespace EnemyItemDisplays
     internal class BeetleGuard : ItemDisplaysBase
     {
         protected override string bodyName => "BeetleGuardBody";
-
+        protected override Dictionary<string, string> NewChildLocatorEntries => new Dictionary<string, string>
+        {
+            { "Chest", "BeetleGuardArmature/ROOT/base/chest"}
+        };
+            
         protected override void SetItemDisplayRules(List<ItemDisplayRuleSet.KeyAssetRuleGroup> itemDisplayRules)
         {
             itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.ArmorPlate, "DisplayRepulsionArmorPlate",//ITEM ADDED
@@ -417,9 +421,9 @@ namespace EnemyItemDisplays
             //    new Vector3(0, 0, 0),
             //    new Vector3(1, 1, 1)));
             itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.Behemoth, "DisplayBehemoth",//ITEM ADDED
-                "Head",
-                new Vector3(1.06387F, -3.94667F, -0.10788F),
-                new Vector3(6.96612F, 299.6164F, 144.5069F),
+                "Chest",
+                new Vector3(-0.54875F, 1.56057F, -3.9646F), 
+                new Vector3(6.11851F, 200.3666F, 359.3759F),
                 new Vector3(1F, 1F, 1F)));
             //itemDisplayRules.Add(ItemDisplays.CreateGenericDisplayRule(RoR2Content.Items.AlienHead, "DisplayAlienHead",
             //    "Head",
