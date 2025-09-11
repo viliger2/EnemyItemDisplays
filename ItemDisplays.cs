@@ -9,6 +9,8 @@ namespace EnemyItemDisplays
         public static Dictionary<string, GameObject> itemDisplayPrefabs = new Dictionary<string, GameObject>();
         public static Dictionary<Object, List<string>> KeyAssetDisplayPrefabs = new Dictionary<Object, List<string>>();
 
+        public static Dictionary<string, List<GameObject>> KeyAssetDisplayPrefabsDictionary = new Dictionary<string, List<GameObject>>();
+
         public static void PopulateDisplays()
         {
             //PopulateFromBody("CommandoBody");
@@ -30,6 +32,23 @@ namespace EnemyItemDisplays
             {
                 ItemDisplayRule[] rules = itemRuleGroups[i].displayRuleGroup.rules;
 
+                if (!KeyAssetDisplayPrefabsDictionary.ContainsKey(itemRuleGroups[i].keyAsset.name))
+                {
+                    List<GameObject> displayPrefabs = new List<GameObject>();
+                    for(int j = 0; j < rules.Length; j++)
+                    {
+                        if (rules[j].followerPrefab)
+                        {
+                            displayPrefabs.Add(rules[j].followerPrefab);
+                        } else
+                        {
+                            displayPrefabs.Add(rules[j].followerPrefabAddress.LoadAssetAsync<GameObject>().WaitForCompletion());
+                        }
+                    }
+                    KeyAssetDisplayPrefabsDictionary.Add(itemRuleGroups[i].keyAsset.name, displayPrefabs);
+                }
+
+
                 bool alreadySeenThisKey = KeyAssetDisplayPrefabs.ContainsKey(itemRuleGroups[i].keyAsset);
 
                 for (int j = 0; j < rules.Length; j++)
@@ -40,6 +59,9 @@ namespace EnemyItemDisplays
                         string key = followerPrefab.name?.ToLowerInvariant();
                         if (!itemDisplayPrefabs.ContainsKey(key))
                         {
+
+
+
                             itemDisplayPrefabs[key] = followerPrefab;
                         }
 
@@ -54,6 +76,22 @@ namespace EnemyItemDisplays
                     }
                 }
             }
+        }
+
+        public static GameObject LoadDisplayNew(string name, int index = 0)
+        {
+            if (!KeyAssetDisplayPrefabsDictionary.ContainsKey(name))
+            {
+                return null;
+            }
+
+            var list = KeyAssetDisplayPrefabsDictionary[name];
+            if(list.Count < index)
+            {
+                return null;
+            }
+
+            return list[index];
         }
 
         public static GameObject LoadDisplay(string name)
@@ -176,6 +214,7 @@ namespace EnemyItemDisplays
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             childName = childName,
                             followerPrefab = displayPrefab,
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             limbMask = LimbFlags.None,
                             localPos = position,
                             localAngles = rotation,

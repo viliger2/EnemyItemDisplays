@@ -1,0 +1,53 @@
+﻿{
+  "keyAssetRules": [],
+  "additionalChildren" : [
+  [
+   "Tentacle1_1",
+   "VagrantArmature/DetatchedHull/Tentacle1.001/Tentacle1.005/Tentacle1.003"
+  ],
+  [
+   "Tentacle1_2",
+   "VagrantArmature/DetatchedHull/Tentacle1.001/Tentacle1.005/Tentacle1.003/Tentacle1.007/Tentacle1.002"
+  ],
+  [
+   "Tentacle1_3",
+   "VagrantArmature/DetatchedHull/Tentacle1.001/Tentacle1.005/Tentacle1.003/Tentacle1.007/Tentacle1.002/Tentacle1.006/Tentacle1.004"
+  ],
+  [
+   "Tentacle1_Tip",
+   "VagrantArmature/DetatchedHull/Tentacle1.001/Tentacle1.005/Tentacle1.003/Tentacle1.007/Tentacle1.002/Tentacle1.006/Tentacle1.004/Tentacle1.008/Tentacle1.008_end"
+  ],
+  [
+   "Tentacle2_1",
+   "VagrantArmature/DetatchedHull/Tentacle2.001/Tentacle2.005/Tentacle2.003"
+  ],
+  [
+   "Tentacle2_2",
+   "VagrantArmature/DetatchedHull/Tentacle2.001/Tentacle2.005/Tentacle2.003/Tentacle2.007/Tentacle2.002"
+  ],
+  [
+   "Tentacle2_3",
+   "VagrantArmature/DetatchedHull/Tentacle2.001/Tentacle2.005/Tentacle2.003/Tentacle2.007/Tentacle2.002/Tentacle2.006/Tentacle2.004"
+  ],
+  [
+   "Tentacle2_Tip",
+   "VagrantArmature/DetatchedHull/Tentacle2.001/Tentacle2.005/Tentacle2.003/Tentacle2.007/Tentacle2.002/Tentacle2.006/Tentacle2.004/Tentacle2.008/Tentacle2.008_end"
+  ],
+  [
+   "Tentacle3_1",
+   "VagrantArmature/DetatchedHull/Tentacle3.001/Tentacle3.005/Tentacle3.003"
+  ],
+  [
+   "Tentacle3_2",
+   "VagrantArmature/DetatchedHull/Tentacle3.001/Tentacle3.005/Tentacle3.003/Tentacle3.007/Tentacle3.002"
+  ],
+  [
+   "Tentacle3_3",
+   "VagrantArmature/DetatchedHull/Tentacle3.001/Tentacle3.005/Tentacle3.003/Tentacle3.007/Tentacle3.002/Tentacle3.006/Tentacle3.004"
+  ],
+  [
+   "Tentacle3_Tip",
+   "VagrantArmature/DetatchedHull/Tentacle3.001/Tentacle3.005/Tentacle3.003/Tentacle3.007/Tentacle3.002/Tentacle3.006/Tentacle3.004/Tentacle3.008/Tentacle3.008_end"
+  ]
+ ]
+}

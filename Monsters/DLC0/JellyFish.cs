@@ -27,6 +27,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 1.1f, 0f),
                             localAngles = new Vector3(270f, 90f, 0f),
@@ -47,6 +48,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayCrowbar"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(1f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -67,6 +69,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBehemoth"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0.6f, 1.5f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -87,6 +90,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDiamond"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -107,6 +111,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFireRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -127,6 +132,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayIceRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0.5f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -147,6 +153,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRepulsionArmorPlate"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(-0.3f, 0f, 0.65f),
                             localAngles = new Vector3(270f, 0f, 0f),
@@ -167,6 +174,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBear"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0.7f, 0f, -0.7f),
                             localAngles = new Vector3(0f, 135f, 0f),
@@ -187,6 +195,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMedkit"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(-1.25f, 0f, 0f),
                             localAngles = new Vector3(270f, 270f, 0f),
@@ -207,6 +216,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0.75f, 0.75f),
                             localAngles = new Vector3(270f, 0f, 0f),
@@ -227,6 +237,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayUkulele"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0.4f, 0f, -1.75f),
                             localAngles = new Vector3(0f, 85f, 90f),
@@ -247,6 +258,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySyringeCluster"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0.5f, 0f, 0.5f),
                             localAngles = new Vector3(0f, 315f, 270f),
@@ -267,6 +279,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAfterburnerShoulderRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0.6f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -287,6 +300,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHoof"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, -1f, 0f),
                             localAngles = new Vector3(270f, 270f, 0f),
@@ -307,7 +321,8 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWhip"),//Jellyfish.redWhip,
-							childName = "Hull2",
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
+                            childName = "Hull2",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 90f),
                             localScale = new Vector3(3f, 3f, 3f),
@@ -327,6 +342,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayJellyGuts"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(-0.2f, 0f, -0.2f),
                             localAngles = new Vector3(315f, 0f, 0f),
@@ -347,6 +363,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHippo"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(-1f, 1f, 0.75f),
                             localAngles = new Vector3(0f, 315f, 0f),
@@ -367,6 +384,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTeslaCoil"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Hull2",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),

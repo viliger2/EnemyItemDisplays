@@ -27,6 +27,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1.5f, -1.5f),
                             localAngles = new Vector3(0f, 180f, 0f),
@@ -47,6 +48,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBehemoth"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(0f, -2.5f, 5f),
                             localAngles = new Vector3(345f, 0f, 180f),
@@ -67,6 +69,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRepulsionArmorPlate"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Butt",
                             localPos = new Vector3(0.8f, -2.2f, -1.5f),
                             localAngles = new Vector3(0f, 180f, 0f),
@@ -87,6 +90,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBear"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(3f, 0f, 1f),
                             localAngles = new Vector3(0f, 90f, 180f),
@@ -107,6 +111,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMedkit"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Butt",
                             localPos = new Vector3(0f, -3f, -2f),
                             localAngles = new Vector3(0f, 180f, 0f),
@@ -127,6 +132,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(1f, -2f, 1f),
                             localAngles = new Vector3(60f, 0f, 0f),
@@ -147,6 +153,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBeetleGland"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(-3f, -2f, 0f),
                             localAngles = new Vector3(0f, 180f, 90f),
@@ -167,6 +174,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTeslaCoil"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(0f, -3f, 1f),
                             localAngles = new Vector3(315f, 0f, 180f),
@@ -187,6 +195,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMushroom"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Stomach",
                             localPos = new Vector3(0f, -2f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),

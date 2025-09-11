@@ -493,6 +493,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Muzzle",
                             localPos = new Vector3(0f, 0.15f, 0.1f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -513,6 +514,7 @@ namespace EnemyItemDisplays.Monsters.DLC0
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMask"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Muzzle",
                             localPos = new Vector3(0f, 0.25f, -0.5f),
                             localAngles = new Vector3(0f, 0f, 0f),

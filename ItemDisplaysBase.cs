@@ -3,6 +3,10 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using SimpleJSON;
+using System.Text;
+using System.IO;
+using static RoR2.HoverVehicleMotor;
 
 namespace EnemyItemDisplays
 {
@@ -52,6 +56,36 @@ namespace EnemyItemDisplays
             bodyCharacterModel.itemDisplayRuleSet.keyAssetRuleGroups = newItemDisplayRules.ToArray();
 
             Record(newItemDisplayRules);
+
+            JSONNode node = new JSONObject();
+            JSONNode keyAssetRules = node["keyAssetRules"].AsArray;
+            foreach (var keyAssetRuleGroups in newItemDisplayRules)
+            {
+                if (!ItemDisplays.KeyAssetDisplayPrefabsDictionary.TryGetValue(keyAssetRuleGroups.keyAsset.name, out _))
+                {
+                    continue;
+                }
+                var newArray = new JSONArray();
+                newArray.SerializeKARG(keyAssetRuleGroups);
+                keyAssetRules.Add(newArray);
+            }
+
+            JSONNode additionalChildren = node["additionalChildren"].AsArray;
+            if (NewChildLocatorEntries != null)
+            {
+                foreach (var additionalChild in NewChildLocatorEntries)
+                {
+                    JSONArray child = new JSONArray()
+                {
+                    additionalChild.Key,
+                    additionalChild.Value
+                };
+                    additionalChildren.Add(child);
+                }
+            }
+
+            File.WriteAllText($"Assets/{bodyName}.json", node.ToString(1), Encoding.UTF8);
+
         }
 
         private int LegacyConvertRules(ItemDisplayRuleSet characterItemDisplayRuleSet)

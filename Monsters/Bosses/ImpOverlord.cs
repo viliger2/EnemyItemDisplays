@@ -27,6 +27,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, -1.5f, -1.3f),
                             localAngles = new Vector3(0f, 180f, 0f),
@@ -47,6 +48,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDiamond"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandL",
                             localPos = new Vector3(0.1f, 0.5f, 0f),
                             localAngles = new Vector3(0f, 0f, 345f),
@@ -57,6 +59,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDiamond"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandR",
                             localPos = new Vector3(-0.1f, 0.5f, 0f),
                             localAngles = new Vector3(0f, 0f, 15f),
@@ -77,6 +80,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFireRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandL",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -97,6 +101,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayIceRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandR",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -117,6 +122,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBear"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, 0f, 0.8f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -137,6 +143,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMedkit"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, -3f, 0.8f),
                             localAngles = new Vector3(270f, 0f, 0f),
@@ -157,6 +164,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 180f, 0f),
@@ -177,6 +185,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayUkulele"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0.5f, -1.5f, 0.8f),
                             localAngles = new Vector3(0f, 0f, 90f),
@@ -197,6 +206,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySyringeCluster"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -217,6 +227,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBleedOnHitAndExplode"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(-1f, -2f, 1f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -237,6 +248,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTeslaCoil"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Neck",
                             localPos = new Vector3(0f, -0.5f, -0.5f),
                             localAngles = new Vector3(315f, 0f, 0f),

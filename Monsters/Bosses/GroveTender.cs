@@ -27,6 +27,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAntler"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(1.5f, 2f, 0.017f),
                             localAngles = new Vector3(358.0388f, 93.19246f, 1.436809f),
@@ -37,6 +38,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAntler"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-1.5f, 2f, 0.017f),
                             localAngles = new Vector3(358.03f, 266.808f, 1.436998f),
@@ -57,6 +59,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDevilHorns"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(1.25f, -1f, 0f),
                             localAngles = new Vector3(3.536957f, 0.01489126f, 14.99564f),
@@ -67,6 +70,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDevilHorns"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-1.25f, -1f, 0f),
                             localAngles = new Vector3(3.536963f, 0.0149023f, 344.9955f),
@@ -87,6 +91,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBrainstalk"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1.5f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -107,6 +112,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayClover"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-1.5f, 3f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -127,6 +133,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Mask",
                             localPos = new Vector3(0f, 0f, 0.5f),
                             localAngles = new Vector3(-90f, 180f, 0f),
@@ -147,6 +154,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMask"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1f, 2f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -167,6 +175,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWolfPelt"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 2f, 1f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -187,6 +196,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShieldBug"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0.75f, -0.2f, 0.5f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -197,6 +207,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShieldBug"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-0.75f, -0.2f, 0.5f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -217,6 +228,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWaxBird"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, -0.5f, -1f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -237,6 +249,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBandolier"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -257,6 +270,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDeathMark"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -277,6 +291,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayPauldron"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1f, 2f),
                             localAngles = new Vector3(-90f, 180f, 0f),
@@ -297,6 +312,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMushroom"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Mask",
                             localPos = new Vector3(0.5f, -0.5f, 2.4f),
                             localAngles = new Vector3(90f, 25f, 0f),
@@ -317,6 +333,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAegis"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(3.5f, -2f, 0f),
                             localAngles = new Vector3(90f, -90f, 0f),
@@ -337,6 +354,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBehemoth"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, -2f, -5f),
                             localAngles = new Vector3(180f, 0f, 0f),
@@ -357,6 +375,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDiamond"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandL",
                             localPos = new Vector3(0f, 0f, -2.75f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -377,6 +396,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFireRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandL",
                             localPos = new Vector3(0.25f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -397,6 +417,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayIceRing"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandR",
                             localPos = new Vector3(-0.25f, 0f, 0f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -417,6 +438,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRepulsionArmorPlate"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1.5f, -2f),
                             localAngles = new Vector3(-25f, 0f, 180f),
@@ -437,6 +459,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBear"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-1.9f, 0.5f, -1.5f),
                             localAngles = new Vector3(0f, -90f, 0f),
@@ -457,6 +480,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMedkit"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(2f, 0f, 0f),
                             localAngles = new Vector3(-90f, 90f, 0f),
@@ -477,6 +501,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 0f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -497,6 +522,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayUkulele"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(-3.2f, -2.5f, 1f),
                             localAngles = new Vector3(0f, 300f, 180f),
@@ -517,6 +543,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySyringeCluster"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 2f, 0f),
                             localAngles = new Vector3(300f, 0f, 0f),
@@ -537,6 +564,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWarhammer"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, -4f, -3f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -557,6 +585,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravBoots"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "FootL",
                             localPos = new Vector3(0f, -0.05f, 0f),
                             localAngles = new Vector3(45f, 0f, 0f),
@@ -567,6 +596,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravBoots"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "FootR",
                             localPos = new Vector3(0f, -0.05f, 0f),
                             localAngles = new Vector3(70f, 0f, 0f),
@@ -587,6 +617,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHook"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "HandR",
                             localPos = new Vector3(0f, 0f, -0.25f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -607,6 +638,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBrokenMask"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Mask",
                             localPos = new Vector3(0f, 0.25f, 1.5f),
                             localAngles = new Vector3(-110f, 0f, 180f),
@@ -627,6 +659,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHoof"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "FootL",
                             localPos = new Vector3(0f, 0.25f, 0.75f),
                             localAngles = new Vector3(20f, 0f, 180f),
@@ -647,6 +680,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAncestralIncubator"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, -4.5f, 0f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -667,6 +701,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWilloWisp"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(-8.5f, 2.75f, 0f),
                             localAngles = new Vector3(0f, 0f, 45f),
@@ -687,6 +722,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGuillotine"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(8.5f, 2.75f, 0f),
                             localAngles = new Vector3(0f, 0f, -45f),
@@ -707,6 +743,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFrostRelic"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(-2f, 13f, -4f),
                             localAngles = new Vector3(90f, 0f, 0f),
@@ -727,6 +764,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTalisman"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(4f, 12f, -6f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -747,6 +785,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFocusedConvergence"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(0f, 16f, -12f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -770,6 +809,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBugWings"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Head",
                             localPos = new Vector3(0f, 1f, -2f),
                             localAngles = new Vector3(45f, 0f, 0f),
@@ -790,6 +830,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGoldGat"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "MuzzleJar",
                             localPos = new Vector3(0f, -9f, 0f),
                             localAngles = new Vector3(180f, 270f, 180f),
@@ -810,6 +851,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMeteor"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(0f, 10.5f, -12f),
                             localAngles = new Vector3(0f, 0f, 0f),
@@ -830,6 +872,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySawmerangFollower"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(0f, 10.5f, -12f),
                             localAngles = new Vector3(-90f, 0f, 0f),
@@ -850,6 +893,7 @@ namespace EnemyItemDisplays.Monsters.Bosses
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravCube"),
+                            followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(""),
                             childName = "Root",
                             localPos = new Vector3(0f, 16f, -6f),
                             localAngles = new Vector3(0f, 0f, 0f),
