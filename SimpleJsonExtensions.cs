@@ -20,19 +20,11 @@ namespace EnemyItemDisplays
             public string Path;
         }
 
-        public struct ItemDisplayInfo
-        {
-            public KeyAssetRuleGroup keyAssetRuleGroup;
-
-            public AdditionalChild[] additionalChildren;
-
-        }
-
         public static AdditionalChild[] DeserializeAdditionalChildren(this JSONArray node)
         {
             List<AdditionalChild> list = new List<AdditionalChild>();
 
-            foreach(JSONArray child in node)
+            foreach (JSONArray child in node)
             {
                 list.Add(new AdditionalChild(child[0], child[1]));
             }
@@ -48,13 +40,13 @@ namespace EnemyItemDisplays
             UnityEngine.Object keyAsset = null;
 
             var itemIndex = ItemCatalog.FindItemIndex(keyAssetName);
-            if(itemIndex != ItemIndex.None)
+            if (itemIndex != ItemIndex.None)
             {
                 keyAsset = ItemCatalog.GetItemDef(itemIndex);
             }
 
             var equipmentIndex = EquipmentCatalog.FindEquipmentIndex(keyAssetName);
-            if(equipmentIndex != EquipmentIndex.None)
+            if (equipmentIndex != EquipmentIndex.None)
             {
                 keyAsset = EquipmentCatalog.GetEquipmentDef(equipmentIndex);
             }
@@ -74,13 +66,12 @@ namespace EnemyItemDisplays
             {
                 var idr = new ItemDisplayRule();
                 idr.ruleType = (ItemDisplayRuleType)rule[0].AsInt;
-                idr.followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject("");
-                idr.followerPrefab = ItemDisplays.LoadDisplayNew(keyAssetName, rule[6]);
-                idr.childName = rule[1];
-                idr.localPos = rule[2].AsArray.ReadVector3();
-                idr.localAngles = rule[3].AsArray.ReadVector3();
-                idr.localScale = rule[4].AsArray.ReadVector3();
-                idr.limbMask = (LimbFlags)rule[5].AsInt;
+                idr.followerPrefabAddress = new UnityEngine.AddressableAssets.AssetReferenceGameObject(rule[1]);
+                idr.followerPrefab = ItemDisplays.LoadDisplay(rule[0]);
+                idr.childName = rule[2];
+                idr.localPos = rule[3].AsArray.ReadVector3();
+                idr.localAngles = rule[4].AsArray.ReadVector3();
+                idr.localScale = rule[5].AsArray.ReadVector3();
                 displayRuleGroup.AddDisplayRule(idr);
             }
 
@@ -92,34 +83,21 @@ namespace EnemyItemDisplays
         public static void SerializeKARG(this JSONNode node, KeyAssetRuleGroup ruleGroup)
         {
             node.Add(ruleGroup.keyAsset.name);
-            var listOfPreviews = ItemDisplays.KeyAssetDisplayPrefabsDictionary[ruleGroup.keyAsset.name];
             JSONArray rules = new JSONArray();
-            foreach(var rule in ruleGroup.displayRuleGroup.rules)
+            foreach (var rule in ruleGroup.displayRuleGroup.rules)
             {
                 JSONArray ruleJson = new JSONArray
                 {
-                    (int)rule.ruleType,
+                    rule.followerPrefab != null ? rule.followerPrefab.name : "",
+                    rule.followerPrefabAddress != null && rule.followerPrefabAddress.IsValid() ? rule.followerPrefabAddress.AssetGUID : "",
                     rule.childName,
                     new JSONArray().WriteVector3(rule.localPos),
                     new JSONArray().WriteVector3(rule.localAngles),
                     new JSONArray().WriteVector3(rule.localScale),
-                    (int)rule.limbMask,
-                    GetFollowerIndex(rule),
                 };
                 rules.Add(ruleJson);
             }
             node.Add(rules);
-
-            int GetFollowerIndex(ItemDisplayRule rule)
-            {
-                if (rule.followerPrefab)
-                {
-                    return listOfPreviews.IndexOf(rule.followerPrefab);
-                } else
-                {
-                    return listOfPreviews.IndexOf(rule.followerPrefabAddress.LoadAssetAsync<GameObject>().WaitForCompletion());
-                }
-            }
         }
 
         // Vector2 and Vector3 conversions are taken from official repo:
