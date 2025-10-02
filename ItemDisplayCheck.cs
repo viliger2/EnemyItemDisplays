@@ -73,6 +73,7 @@ namespace EnemyItemDisplays
             string firstCompatibleChild = "";
             foreach (ItemDisplayRuleSet.KeyAssetRuleGroup ruleGroup in ruleSet)
             {
+                if (ruleGroup.displayRuleGroup.rules == null) continue;
                 if (ruleGroup.displayRuleGroup.rules.Length == 0)
                     continue;
 
